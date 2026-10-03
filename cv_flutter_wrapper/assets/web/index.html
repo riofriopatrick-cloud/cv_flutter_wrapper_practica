@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hoja de vida de Patrick Jhosep Riofrío Elizalde, estudiante de Ingeniería en Ciencias de la Computación (UPEC).">
+  <title>Hoja de vida | Patrick Riofrío</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <img class="foto" src="foto.jpg" alt="Foto de Patrick Riofrío" width="112" height="112">
+    <div class="hero-texto">
+      <h1>Patrick Jhosep Riofrío Elizalde</h1>
+      <p class="cargo">Estudiante de Ingeniería en Ciencias de la Computación</p>
+    </div>
+    <button id="btnTema" class="btn-tema" type="button" aria-label="Cambiar entre tema claro y oscuro">Tema oscuro</button>
+  </header>
+
+  <nav class="menu" aria-label="Secciones">
+    <a href="#perfil">Perfil</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#formacion">Formación</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main>
+
+    <section id="perfil" aria-labelledby="t-perfil">
+      <h2 id="t-perfil">Perfil</h2>
+      <p>Estudiante de Ingeniería en Ciencias de la Computación (8vo nivel), modalidad presencial, en la Universidad Politécnica Estatal del Carchi (UPEC). Con conocimientos en programación en Python, experiencia en el uso de herramientas de inteligencia artificial (Claude, ChatGPT, DeepSeek) y participación en proyectos de vinculación con la sociedad orientados a la capacitación tecnológica.</p>
+      <h3>Objetivo</h3>
+      <p>Ejercer prácticas preprofesionales en la Cooperativa San Cristóbal, aplicando conocimientos en programación, computación e inteligencia artificial en beneficio de los procesos institucionales.</p>
+    </section>
+
+    <section id="experiencia" aria-labelledby="t-exp">
+      <h2 id="t-exp">Experiencia</h2>
+      <article class="item">
+        <button class="acordeon" type="button" aria-expanded="false" aria-controls="exp1">
+          <span class="acordeon-titulo">Colaborador en Proyecto de Vinculación con la Sociedad</span>
+          <span class="acordeon-meta">Unidad Educativa La Salle · Certificado de participación (14/sep/2026)</span>
+        </button>
+        <div id="exp1" class="panel" hidden>
+          <ul>
+            <li>Participé como colaborador en un proyecto de vinculación con la sociedad enfocado en el uso de herramientas de inteligencia artificial aplicadas a la educación.</li>
+            <li>Contribuí a la capacitación de docentes en el uso de herramientas de IA, logrando un 100% de docentes capacitados y certificados.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="habilidades" aria-labelledby="t-hab">
+      <h2 id="t-hab">Habilidades</h2>
+      <div class="filtros" role="group" aria-label="Filtrar habilidades">
+        <button class="filtro activo" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+        <button class="filtro" type="button" data-filtro="tecnica" aria-pressed="false">Técnicas</button>
+        <button class="filtro" type="button" data-filtro="ia" aria-pressed="false">Inteligencia artificial</button>
+        <button class="filtro" type="button" data-filtro="blanda" aria-pressed="false">Trabajo con personas</button>
+      </div>
+      <ul class="habilidades" id="listaHabilidades">
+        <li data-cat="tecnica">Programación en Python</li>
+        <li data-cat="tecnica">Fundamentos de computación</li>
+        <li data-cat="ia">Claude</li>
+        <li data-cat="ia">ChatGPT</li>
+        <li data-cat="ia">DeepSeek</li>
+        <li data-cat="blanda">Capacitación y transferencia de conocimiento</li>
+        <li data-cat="blanda">Trabajo colaborativo</li>
+      </ul>
+    </section>
+
+    <section id="formacion" aria-labelledby="t-form">
+      <h2 id="t-form">Formación y certificaciones</h2>
+      <article class="item">
+        <h3>Ingeniería en Ciencias de la Computación</h3>
+        <p class="meta">Universidad Politécnica Estatal del Carchi (UPEC) · 8vo nivel, en curso</p>
+      </article>
+      <article class="item">
+        <h3>Bachiller Técnico</h3>
+        <p class="meta">Bachillerato Técnico (segundo nivel) · Título obtenido</p>
+      </article>
+      <article class="item">
+        <h3>Vinculación con la Sociedad: Uso de IA en educación</h3>
+        <p class="meta">Certificado · 14/sep/2026</p>
+      </article>
+      <article class="item">
+        <h3>Licencia de conducir Tipo E</h3>
+      </article>
+    </section>
+
+    <section id="contacto" aria-labelledby="t-cont">
+      <h2 id="t-cont">Contacto</h2>
+      <ul class="datos-contacto">
+        <li><a href="tel:+593992059950">0992059950</a></li>
+        <li><a href="mailto:riofriopatrick@gmail.com">riofriopatrick@gmail.com</a></li>
+        <li>Tulcán, Ecuador</li>
+      </ul>
+
+      <h3>Enviar un mensaje</h3>
+      <form id="formContacto" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" aria-describedby="e-nombre">
+          <p class="error" id="e-nombre" role="alert"></p>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input id="correo" name="correo" type="email" autocomplete="email" aria-describedby="e-correo">
+          <p class="error" id="e-correo" role="alert"></p>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" aria-describedby="e-mensaje"></textarea>
+          <p class="error" id="e-mensaje" role="alert"></p>
+        </div>
+        <button class="enviar" type="submit">Enviar mensaje</button>
+        <p class="exito" id="exito" role="status" hidden></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Patrick Riofrío · Tulcán, Ecuador · 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

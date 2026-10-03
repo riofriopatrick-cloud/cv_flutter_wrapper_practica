@@ -1,0 +1,287 @@
+/* Hoja de vida web | Mobile-First | Flexbox + Grid */
+
+:root {
+  --fondo: #f5f6f8;
+  --superficie: #ffffff;
+  --gris: #eceef1;
+  --tinta: #1b2430;
+  --tinta-suave: #4d5a6b;
+  --azul: #1f3a5c;
+  --azul-claro: #dfe8f3;
+  --acento: #b8791f;
+  --borde: #d3d8df;
+  --error: #b3261e;
+  --exito: #1e6b3a;
+  --fuente: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --fondo: #11161d;
+  --superficie: #19212b;
+  --gris: #202a36;
+  --tinta: #e8ecf1;
+  --tinta-suave: #a5b1c0;
+  --azul: #0f2238;
+  --azul-claro: #26405f;
+  --acento: #e0a94f;
+  --borde: #2e3a49;
+  --error: #ff8a80;
+  --exito: #7fd69a;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 56px; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--fondo);
+}
+
+/* ---------- Encabezado ---------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 20px 24px;
+  text-align: center;
+  color: #fff;
+  background: var(--azul);
+}
+
+.foto {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.cargo {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  color: #c9d6e6;
+}
+
+.btn-tema {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ---------- Menú ---------- */
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px;
+  overflow-x: auto;
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+}
+
+.menu a {
+  flex: 0 0 auto;
+  padding: 6px 14px;
+  color: var(--tinta);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 999px;
+}
+
+.menu a:hover { background: var(--gris); }
+
+/* ---------- Secciones ---------- */
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 8px 16px 24px;
+}
+
+section { padding: 22px 0 6px; }
+
+h2 {
+  margin: 0 0 12px;
+  padding-left: 12px;
+  font-size: 1.25rem;
+  color: var(--azul);
+  border-left: 4px solid var(--acento);
+}
+
+:root[data-theme="dark"] h2 { color: var(--tinta); }
+
+h3 { margin: 18px 0 6px; font-size: 1.02rem; }
+
+p { margin: 0 0 12px; max-width: 70ch; }
+
+.meta { color: var(--tinta-suave); font-size: 0.92rem; margin-bottom: 4px; }
+
+.item {
+  padding: 0 0 14px 14px;
+  margin-bottom: 4px;
+  border-left: 2px solid var(--borde);
+}
+
+.item h3 { margin-top: 0; }
+
+/* ---------- Acordeón de experiencia ---------- */
+.acordeon {
+  display: block;
+  width: 100%;
+  padding: 12px 40px 12px 14px;
+  position: relative;
+  font: inherit;
+  text-align: left;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.acordeon::after {
+  content: "+";
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--acento);
+}
+
+.acordeon[aria-expanded="true"]::after { content: "\2212"; }
+
+.acordeon-titulo { display: block; font-weight: 600; }
+.acordeon-meta { display: block; margin-top: 2px; font-size: 0.88rem; color: var(--tinta-suave); font-style: italic; }
+
+.panel { padding: 10px 6px 0 14px; }
+.panel ul { margin: 0; padding-left: 18px; }
+.panel li { margin-bottom: 8px; }
+
+/* ---------- Habilidades ---------- */
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+
+.filtro {
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 6px 14px;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filtro.activo {
+  color: #fff;
+  background: var(--azul);
+  border-color: var(--azul);
+}
+
+:root[data-theme="dark"] .filtro.activo { background: var(--azul-claro); border-color: var(--azul-claro); }
+
+.habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.habilidades li {
+  padding: 6px 12px;
+  background: var(--azul-claro);
+  color: var(--tinta);
+  border-radius: 6px;
+  font-size: 0.92rem;
+}
+
+:root[data-theme="light"] .habilidades li { color: var(--azul); }
+
+.habilidades li[hidden] { display: none; }
+
+/* ---------- Contacto y formulario ---------- */
+.datos-contacto { margin: 0 0 8px; padding: 0; list-style: none; }
+.datos-contacto li { padding: 4px 0; }
+.datos-contacto a { color: var(--tinta); }
+
+.campo { margin-bottom: 14px; }
+
+label { display: block; margin-bottom: 4px; font-weight: 600; font-size: 0.92rem; }
+
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+input.invalido, textarea.invalido { border-color: var(--error); }
+
+.error { min-height: 1.1em; margin: 4px 0 0; font-size: 0.85rem; color: var(--error); }
+
+.enviar {
+  font: inherit;
+  font-weight: 600;
+  padding: 11px 22px;
+  color: #fff;
+  background: var(--azul);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+:root[data-theme="dark"] .enviar { background: var(--azul-claro); }
+
+.exito { margin-top: 12px; color: var(--exito); font-weight: 600; }
+
+:focus-visible { outline: 3px solid var(--acento); outline-offset: 2px; }
+
+footer {
+  padding: 18px 16px 28px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--tinta-suave);
+  border-top: 1px solid var(--borde);
+}
+
+/* ---------- Pantallas amplias ---------- */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    gap: 24px;
+    padding: 36px 32px;
+  }
+  .hero h1 { font-size: 1.9rem; }
+  .menu { justify-content: center; }
+  main { padding: 12px 24px 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
