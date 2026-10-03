@@ -56,11 +56,11 @@ adb install -r cv_flutter_wrapper\build\app\outputs\flutter-apk\app-release.apk
 
 **App Flutter en tema claro**
 
-![App tema claro](capturas/02_app_tema_claro.png)
+![App tema claro](capturas/02_app_tema_claro.jpeg)
 
 **App Flutter en tema oscuro**
 
-![App tema oscuro](capturas/03_app_tema_oscuro.png)
+![App tema oscuro](capturas/03_app_tema_oscuro.jpeg)
 
 **Compilacion**
 
