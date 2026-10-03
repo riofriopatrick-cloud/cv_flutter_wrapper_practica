@@ -48,16 +48,23 @@ docker run --rm -v ${PWD}:/app -w /app instrumentisto/flutter:3.41.6 flutter cre
 docker run --rm -v ${PWD}/cv_flutter_wrapper:/app -v gradle_cache:/root/.gradle -w /app instrumentisto/flutter:3.41.6 flutter build apk --release
 adb install -r cv_flutter_wrapper\build\app\outputs\flutter-apk\app-release.apk
 ```
-
 ## Capturas de pantalla
 
-> Agregar aquí las capturas del emulador (pegarlas en la carpeta `capturas/`):
->
-> 1. Web en el navegador (móvil y escritorio).
-> 2. App Flutter en tema claro.
-> 3. App Flutter en tema oscuro.
-> 4. Acordeón abierto y filtro de habilidades.
-> 5. Formulario con errores de validación.
+**Web en el navegador**
+
+![Web en el navegador](capturas/01_web_navegador.png)
+
+**App Flutter en tema claro**
+
+![App tema claro](capturas/02_app_tema_claro.png)
+
+**App Flutter en tema oscuro**
+
+![App tema oscuro](capturas/03_app_tema_oscuro.png)
+
+**Compilacion**
+
+![App tiempo de compilacion](capturas/compilacion.png)
 
 ## Cuadro comparativo: nativo Android vs. web embebida en Flutter
 
