@@ -46,7 +46,7 @@ cd D:\DOCKER
 docker run --rm -v ${PWD}:/app -w /app instrumentisto/flutter:3.41.6 flutter create cv_flutter_wrapper
 # Copiar lib/main.dart, pubspec.yaml y assets/web/ de este repositorio sobre el proyecto creado
 docker run --rm -v ${PWD}/cv_flutter_wrapper:/app -v gradle_cache:/root/.gradle -w /app instrumentisto/flutter:3.41.6 flutter build apk --release
-adb install -r cv_flutter_wrapper\build\app\outputs\flutter-apk\app-release.apk
+adb install -r cv_flutter_wrapper\build\app\outputs\flutter-apk\appweb.apk
 ```
 ## Capturas de pantalla
 
@@ -84,11 +84,11 @@ adb install -r cv_flutter_wrapper\build\app\outputs\flutter-apk\app-release.apk
 
 | Métrica | Nativa | Web embebida |
 |---|---|---|
-| Tamaño del APK (MB) | | |
-| Tiempo de compilación (min) | | |
-| Tiempo hasta ver la primera pantalla (s) | | |
+| Tamaño del APK (MB) | 45mb | 40mb |
+| Tiempo de compilación (min) |30 min | 10 min |
+| Tiempo hasta ver la primera pantalla (s) | 0.23s | 0.12s |
 
-Tamaño del APK: `dir cv_flutter_wrapper\build\app\outputs\flutter-apk\app-release.apk`
+Tamaño del APK: `dir cv_flutter_wrapper\build\app\outputs\flutter-apk\appweb.apk`
 
 ## Conclusiones
 
